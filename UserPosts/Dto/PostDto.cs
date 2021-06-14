@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace UserPosts.Models
 {
-    public class Post
+    public class PostDto
     {
-        public int id { get; set; }
-        public int userId { get; set; }
-        public string title { get; set; }
-        public string body { get; set; }
+        [JsonPropertyName("Id")]
+        public int Id { get; set; }
+
+        [JsonPropertyName("UserId")]
+        public int UserId { get; set; }
+
+        [JsonPropertyName("Title")]
+        public string Title { get; set; }
+
+        [JsonPropertyName("Body")]
+        public string Body { get; set; }
     }
 }

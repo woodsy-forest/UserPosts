@@ -37,11 +37,17 @@ namespace UserPosts
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            var origins = Configuration["AllowedOrigins"].Split(";");
+            app.UseCors(x => x
+                    .WithOrigins(origins)
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

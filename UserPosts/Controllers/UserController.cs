@@ -51,6 +51,7 @@ namespace UserPosts.Controllers
                 foreach(var user in users)
                 {
                     var userDto = new UserDto();
+                    userDto.Id = user.id;
                     userDto.Name = user.name;
                     userDto.UserName = user.username;
                     userDto.PostCount = user.posts.Count;

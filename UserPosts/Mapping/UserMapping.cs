@@ -13,7 +13,7 @@ namespace UserPosts.Mapping
             var userPostDto = new UserPostDto();
             userPostDto.Id = user.id;
             userPostDto.Name = user.name;
-            userPostDto.Username = user.username;
+            userPostDto.UserName = user.username;
             userPostDto.Email = user.email;
             var addressDto = new AddressDto();
             addressDto.Street = user.address.street;
@@ -36,10 +36,10 @@ namespace UserPosts.Mapping
             foreach(var post in user.posts)
             {
                 var postDto = new PostDto();
-                postDto.id = post.id;
-                postDto.userId = post.userId;
-                postDto.title = post.title;
-                postDto.body = post.body;
+                postDto.Id = post.id;
+                postDto.UserId = post.userId;
+                postDto.Title = post.title;
+                postDto.Body = post.body;
 
                 userPostDto.Posts.Add(postDto);
             }
